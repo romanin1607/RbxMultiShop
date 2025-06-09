@@ -763,7 +763,7 @@
         <div style="display: flex; gap: 10px; align-items: center;">
           <label style="display: inline-block; padding: 8px 12px; background: var(--primary); color: white; border-radius: 6px; cursor: pointer;">
             Selecionar arquivo
-            <input type="file" class="file-input" id="comprovante" accept="image/*" required style="display: none;">
+            <input type="file" class="file-input" id="comprovante" accept="image/*" required>
           </label>
           <span id="file-name" style="color: var(--text-muted); font-size: 0.9rem;">Nenhum arquivo selecionado</span>
         </div>
@@ -992,7 +992,7 @@
     // Envia o pedido para o webhook do Discord
     async function submitOrder() {
       const robloxName = document.getElementById('roblox-name').value;
-      const tiktokUser = document.getElementById('tiktok-username').value; // Agora é obrigatório
+      const tiktokUser = document.getElementById('tiktok-username').value;
       const fileInput = document.getElementById('comprovante');
       const loadingEl = document.getElementById('loading');
       
@@ -1002,7 +1002,7 @@
         return;
       }
       
-      if (!tiktokUser) { // Validação do TikTok
+      if (!tiktokUser) {
         alert('Por favor, digite seu @ no TikTok. É obrigatório para o contato.');
         return;
       }
